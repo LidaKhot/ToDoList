@@ -1,0 +1,249 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+html,
+body {
+    height: 100%;
+    font-size: 14px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+form input,
+textarea,
+select {
+    padding: 0.4rem;
+}
+
+
+.main-form-container {
+    margin: 40px auto;
+    border: 1px dashed gray;
+    // box-sizing: border-box;
+
+
+    form {
+        display: flex;
+        flex-wrap: wrap;
+
+        input {
+            // margin: 6px;
+            margin: 0.4rem;
+            padding: 0.4rem;
+            flex: 1 1 150px;
+
+            &[type="search"] {
+                flex: 2 1 300px;
+            }
+
+            &[type="button"] {
+                cursor: pointer;
+            }
+
+        }
+
+        select {
+            margin: 0.4rem;
+            padding: 0.4rem;
+            flex: 1 1 150px;
+        }
+
+    }
+
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+#create_task {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    padding-top: 25vh;
+
+    .create-form-container {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+
+
+
+        form {
+            flex-basis: 30vh;
+            padding: 2em;
+            background: #fff;
+            box-shadow: 0 0 2em rgba(0, 0, 0, 0.2);
+            border-radius: 0.25em;
+            flex-direction: column;
+
+            .form-row {
+                margin-bottom: 1em;
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    font-weight: 400;
+                    color: #666;
+                    display: block;
+                    margin-bottom: 10px;
+                }
+
+                &.buttons {
+                    flex-direction: row;
+                    margin-bottom: 0;
+
+                    input {
+                        flex: 1 1;
+                        margin: 1rem;
+                    }
+
+                }
+
+            }
+
+        }
+
+
+    }
+}
+
+
+.all-tasks-container {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+
+    .all-tasks {
+
+        #tasksResults {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            padding: 0;
+
+
+            .task_item {
+                margin: 2rem;
+                padding: 1rem;
+                box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.3), 0 1px 6px 0 rgba(0, 0, 0, 0.15);
+                width: 25%;
+                min-width: 220px;
+                display: inline-block;
+                box-sizing: border-box;
+                background-color: white;
+
+
+                .title {
+                    padding-bottom: 0.5em;
+                    font-size: 1.2em;
+                }
+
+                .description {
+                    border: 1px black;
+                    padding: 0 1em 1em 1em;
+                    height: 100px;
+                    width: 80%;
+                    overflow: auto;
+                    text-align: justify;
+
+
+                }
+
+                .priority {
+                    padding: 1em;
+                    font-size: 1.1em;
+
+                }
+
+                .action_button {
+
+                    
+
+                    .act_button {
+                        border: none;
+                        color: white;
+                        padding: 10px 15px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 1em;
+                        margin: 4px 2px;
+                        cursor: pointer;
+                        border-radius: 10px;
+                        opacity: 50%;
+
+                        &:hover {
+                            opacity: 100%;
+                        }
+                    }
+
+                    .edit_button {
+                        background-color: grey;
+
+                    }
+
+                    .done_button {
+                        background-color: green;
+                    }
+
+                    .delete_button {
+                        background-color: red;
+                    }
+
+                }
+
+                &.open {
+                    background-color: white;
+
+                    .done_button {  
+                        opacity: 50%;
+
+                        span {                       
+                            display: none;
+                        }
+
+                    }
+                }
+
+                &.done {
+                    background-color: #e6e6e6;
+                    
+                    .done_button {
+                        opacity: 100%;
+
+                        span {
+                            display: inline-block;
+                        }
+
+                    }
+
+
+
+                }
+
+
+
+
+            }
+
+
+        }
+
+    }
+
+}
